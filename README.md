@@ -19,7 +19,7 @@
 AND
 (finance OR banking OR fintech)
 ```
-- 수집 논문 수: 602 papers (~ 2023:12 papers, 2023 ~ 2026: 590)
+- 수집 논문 수: 602 papers (12 papers before 2023, 590 papers from 2023–2026)
 - 분석 대상: 논문 Abstract
 
 ## Topic Modeling Pipeline
@@ -28,7 +28,7 @@ AND
 
 #### Pipeline
 1. Abstract 전처리
-2. SentenceTransformer 기반 문장 임베딩
+2. SentenceTransformer (all-MiniLM-L6-v2) 기반 문장 임베딩
 3. UMAP 차원 축소
 4. HDBSCAN 클러스터링
 5. c-TF-IDF 기반 토픽 키워드 추출
@@ -90,7 +90,7 @@ GenAI-Finance-TopicModeling/
 
 특히 다음과 같은 과도하게 빈번한 단어들은 토픽 분류의 의미를 약화시킬 수 있어 custom stopwords로 제거하였습니다.
 ```
-model, llm, finance, research, study, method,
+model, llm, research, study, method,
 paper, result, approach, using, based ...
 ```
 ## BERTopic Settings
@@ -129,4 +129,4 @@ min_df=5
 
 ### Notes
 - 본 레포지토리에는 BERTopic 기반 토픽 모델링 과정만 포함되어 있습니다.
-- 생성형 AI(ChatGPT)와의 비교 분석은 최종 보고서에서 별도로 기술하였습니다.
+- ChatGPT 기반 토픽 비교 분석 내용은 최종 보고서에 포함되어 있습니다.
