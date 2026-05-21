@@ -19,7 +19,7 @@
 AND
 (finance OR banking OR fintech)
 ```
-- 수집 논문 수: 602 papers (~2023:12 papers, 2023~2026: 59)
+- 수집 논문 수: 602 papers (~ 2023:12 papers, 2023 ~ 2026: 590)
 - 분석 대상: 논문 Abstract
 
 ## Topic Modeling Pipeline
@@ -47,16 +47,25 @@ AND
 ```
 GenAI-Finance-TopicModeling/
 │
-├── notebooks/
-│   ├── 01_preprocessing_I.ipynb
-│   ├── 02_BERTopic_I.ipynb
-│   ├── 03_preprocessing_II.ipynb
-│   └── 04_BERTopic_II.ipynb
+├── WOS_data.xls
+│
+├── preprocessing/
+│   ├── 01_preprocessing_I.ipynb      # Local VS Code, 1st preprocessing
+│   └── 03_preprocessing_II.ipynb     # Colab T4 GPU, 2nd preprocessing
+│
+├── BERTopic/
+│   ├── 02_BERTopic_I.ipynb           # 1st BERTopic modeling
+│   └── 04_BERTopic_II.ipynb          # 2nd BERTopic modeling
 │
 ├── outputs/
 │   ├── output_01_cleaned_abstracts.csv
 │   ├── output_02_cleaned_abstracts.csv
 │   └── output_03_topic_info.csv
+│
+├── plots/
+│   ├── plot01_Intertopic_Distance_Map.png
+│   ├── plot02_Topic_Word_Scores.png
+│   └── plot03_Topic_Similarity_Matrix.png
 │
 └── README.md
 ```
